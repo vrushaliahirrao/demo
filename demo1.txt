@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title></title>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+</head>
+<body>
+	
+	<script>
+		var app = angular.module('MyApp', [])
+		app.controller('MyController', function ($scope) {
+			$scope.beverages = [
+			{
+				id: 1,
+				name: 'Tea',
+				price:10,
+				
+			}, 
+			{
+				id: 2,
+				name: 'Coffee',
+				price:20,
+			}, 
+			{
+				id: 3,
+				name: 'Orange Juice',
+				price:25,
+				
+			}];
+
+			$scope.dispvalue=function(){
+				total=0;
+				for(var i=0;i<$scope.beverages.length;i++){
+					if($scope.beverages[i].selected){
+
+						var bname=$scope.beverages[i].name;
+						var bprice=$scope.beverages[i].price;
+
+						total+=bprice;
+
+						console.log("Beverage name:"+bname+' - '+bprice);
+					}
+
+				}
+
+				console.log("Total:"+total);
+			}
+			$scope.addnew=function(){
+				$scope.beverages.push({name:'cold-drinks',id:4,price:30});
+				
+			};
+			$scope.selectall = function () {
+			    if ($scope.selectAll) {
+			        $scope.selectAll = true;
+			    } else {
+			        $scope.selectAll = false;
+			    }
+			    angular.forEach($scope.beverages, function (beverage) {
+			        beverage.selected = $scope.selectAll;
+			    });
+
+};
+			
+		});
+
+	</script>
+
+	<div ng-app="MyApp" ng-controller="MyController">
+		<label><b>Please select option :</b></label><br>
+		<input type="checkbox" ng-model="selectAll" ng-bind="selectall()">Select all
+		<div ng-repeat="beverage in beverages">
+
+			<input type="checkbox" ng-model="beverage.selected" ng-bind="beverage.name"/>
+			{{beverage.name}}:-{{beverage.price}} 
+			
+
+		</div>
+		<input type="button" value="add new" ng-click="addnew()"/><br>
+		<input type="button" value="submit" ng-click="dispvalue()"/><br>
+		<input type="button" value="sliced item" ng-click="sliced_item()"/>
+		<p>{{selected}}</p>
+	</div>
+</body>
+</html>
+
+
+
+<!-- <html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+	
+	<script>
+
+	</script>
+	</body>
+	</html> -->
