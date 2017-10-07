@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<title></title> 
+<script type="text/javascript" src="operations.js"></script>
+</head> 
+<body> 
+
+<form> 
+<label>Give 1st Number :</label> <input type="text" name="num1" id="first" onkeyup="fenable()" /><br> 
+<label>Give 2nd Number :</label> <input type="text" name="num2" id="second" disabled onkeyup="senable()" >
+<br><br>
+<Label><b>Operations</b></Label>
+	  <select>
+		<option value="add" onClick="add()">Addition</option>
+		<option value="sub" onClick="sub()">Subtraction</option> 
+		<option value="mul" onClick="mul()">Multiplication</option>
+		<option value="div" onClick="div()">Division</option>
+		<option value="mod" onClick="mod()">Modulus</option>
+	  </select>	<br> 
+<p>The Final Result is : <span id = "result"></span> </p> 
+<input type="submit" disabled value="submit" id="blur" onClick="operations()"> 
+</form> <br><br>
+
+</body> 
+</html>

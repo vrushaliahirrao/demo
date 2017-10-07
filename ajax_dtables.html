@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<h2>DataTable</h2>
+
+<table id="example" class="display" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th>Weather</th>
+				<th>Weather 2</th>
+				<th>Weather 3</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>Weather</th>
+				<th>Weather 2</th>
+				<th>Weather 3</th>
+			</tr>
+		</tfoot>
+</table>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('#example').DataTable( {
+		"processing": true,
+		"ajax": {
+			"url": "table_data.json",
+			"dataSrc": "data"
+		},
+		"columns": [
+			{ "data": "name" },
+			{ "data": "hr.salary" },
+			{ "data": "hr.start_date" }
+		 ]
+	} );
+
+
+
+
+
+} );
+</script>
+
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+</body>
+</html>

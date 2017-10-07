@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Main</th>
+                <th>Icon</th>
+                <th>Base</th>
+                <th>Temp</th>
+                <th>Pressure</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Main</th>
+                <th>Icon</th>
+                <th>Base</th>
+                <th>Temp</th>
+                <th>Pressure</th>
+            </tr>
+        </tfoot>
+        
+    </table>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+    <script>
+      // $(document).ready(function() {
+$(function(){
+    $.getJSON('forecast.json', function(data) {
+    $('#example').DataTable();
+} );
+});
+    </script>
+
+
+</body>
+</html>

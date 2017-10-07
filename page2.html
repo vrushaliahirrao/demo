@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function date() 
+		{
+			date = new Date();
+			var mon = ["Jan","feb","mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+		    var dates=date.getDate()+" "+mon[getMonth()]+" "+date.getFullYear();
+			alert(document.getElementById("fulldate").innerHTML=dates);
+		}
+	</script>
+</head>
+<body>
+ <input type="button" value="Todays date" onclick="date()"/>
+ <p id="fulldate"></p>
+</body>
+</html>

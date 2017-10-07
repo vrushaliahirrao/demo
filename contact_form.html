@@ -1,0 +1,101 @@
+<html >
+   <head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <!--external javascript-->
+	 <script type="text/javascript" src="validation.js">
+ 
+	 </script>
+   <!-- <style>
+    body {
+      background-image: url("back_book.jpg");height: 400px;width: 100%;
+      background-repeat: no-repeat;
+    }
+   </style> -->
+   </head>
+   <body>
+    <center>
+ 	 <h1><u> Details:</u></h1>
+	 <form name="form1"  method="post"  action="contact_form.html" onsubmit="return checkCheckBox(this)"> <table border='0'>
+	  <tr>
+	  <td><label for="fullname"><b>FullName:</b><sup style="color:red;">*</sup> </label></td>
+	  <td><input type="text" id="fullname" > </td><br>
+       </tr>
+
+      <!--<tr>
+	  <td><label for="pwd"><b>Password :</b><sup style="color:red;">*</sup> </label></td>
+      <td><input type="password" id="pwd"> </td><br>
+      </tr>-->
+
+
+      <tr>
+      <td><label for="contctno"><b>Contact Number: </b><sup style="color:red;">*</sup> </label></td>
+      <td><input type="text" id="contctno"> <br></td>
+ 	  </tr>
+ 	  <tr>
+	  <td><label for="email"><b>Email:</b><sup style="color:red;">*</sup> </label></td>
+      <td><input type="text" id="email"><br></td>
+      </tr>
+ 
+ 	  <tr>
+      <td><label for="gender"><b>Gender :</b><sup style="color:red;">*</sup> </label></td>
+      <td><input type="radio" name="gender" value="Male"> Male</td>
+	  <td><input type="radio" name="gender" value="Female"> Female </td> <br>
+	  </tr>
+ 
+
+	  <!--<Label for="gender"><b>Gender:</b><sup style="color:#F00">*</sup> </Label>
+	  <select>
+		<option value="male">male</option>
+		<option value="female">female</option> 
+	  </select>	<br>
+
+	<label for="class"><b>Class : </b><sup style="color:#F00">*</sup></label> <br>
+	<label for="a1"><input type="radio" name="class" id="a1" value="1" checked>1<br>
+  	<label for="a2"><input type="radio" name="class" id="a2" value="2"> 2<br>
+  	<label for="a3"><input type="radio" name="class" id="a3" value="3"> 3<br>
+  	<label for="a4"><input type="radio" name="class" id="a4" value="4"> 4<br>
+  	<label for="a5"><input type="radio" name="class" id="a5" value="5"> 5<br>-->
+    
+    <tr>  
+    <td><label for="subjects"><b>Subjects :</b><sup style="color:red;">*</sup></label></td> 
+  	<td><input type="checkbox" name="subjects" value="0">English</td>
+  	<td><input type="checkbox" name="subjects" value="1">Maths</td> 
+  	<td><input type="checkbox" name="subjects" value="2">Science</td>
+  	<td><input type="checkbox" name="subjects" value="3">History</td>
+  	<td><input type="checkbox" name="subjects" value="4">Drawing</td></tr>
+    
+    <tr>
+  	<td></td><td>
+    <!-- <button type="submit" onClick="return validateForm()"><br> -->
+    <input type="submit" onClick="return validateForm()" value="Submit"><br>
+    <input type="reset" onClick="return confirmreset()"></td></tr><br>
+    </table>
+
+	</form> </center>
+	</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    var myname=angular.module('myname',[]);
+
+    myname.controller('myctrl',function($scope){
+      $scope.submitForm=function(isValid){
+        if($scope.submitted=true){
+          console.log("Name :"+$scope.name);
+        }
+        else(!isValid){
+          alert(Please enter a valid name);
+        }
+      }
+    })
+  </script>
